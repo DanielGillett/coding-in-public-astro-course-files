@@ -1,16 +1,55 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import { Icon } from "astro-icon/components";
 
+const res = await fetch("https://jsonplaceholder.typicode.com/todo/1");
+const data = await res.json();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="myTitle">
+  <div>
+    <h1>Home</h1>
+    <Button
+      id="my-btn"
+      aria-label="Add to cart"
+      variety="default"
+      isBordered
+      background="#2222"
+    >
+      <span>Btn text</span>
+      <Icon
+        name="ph:apple-logo-fill"
+        size={35}
+        style="color: blue;"
+        title="My Apple Icon"
+      />
+    </Button>
+    <Button
+      id="my-btn-two"
+      aria-label="Add to cart"
+      variety="icon"
+      isBordered
+      background="#2222"
+    >
+      <Icon
+        name="ph:apple-logo-fill"
+        size={35}
+        style="color: blue;"
+        title="My Apple Icon"
+      />
+    </Button>
+  </div>
+</BaseLayout>
+
+<!-- 
+interface Props extends HTMLAttributes<"svg"> {
+  /** The name of the icon to include */
+  name: string;
+  /** Shorthand for including a <title>{props.title}</title> element in the SVG */
+  title?: string;
+  /** Shorthand for setting width and height */
+  size?: number;
+  width?: number;
+  height?: number;
+} -->

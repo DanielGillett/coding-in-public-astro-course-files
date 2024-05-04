@@ -1,27 +1,107 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Button from "../components/Button.astro";
-import { Icon } from "astro-icon/components";
+import Counter from "../components/Counter";
 import Heading from "../components/Heading.astro";
-
-const res = await fetch("https://jsonplaceholder.typicode.com/todo/1");
-const data = await res.json();
-
-// const fakeHtml = `<h1>Heading</h1><p>something <strong>here</strong></p>`;
-
-const headings = [
-  { tagName: "h1", size: "h2", text: "Heading 1" },
-  { tagName: "h2", size: "h5", text: "Heading 2" },
-  { tagName: "h3", size: "h6", text: "Heading 3" },
-];
 ---
 
-<BaseLayout title="myTitle">
-  {
-    headings.map((heading) => (
-      <Heading tagName={heading.tagName} size={heading.size}>
-        {heading.text}
-      </Heading>
-    ))
-  }
-</BaseLayout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <Counter client:only="react" />
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      aut nam incidunt beatae, fugit vitae accusantium, ipsum enim totam rerum
+      maiores aliquam?
+    </p>
+  </body>
+</html>

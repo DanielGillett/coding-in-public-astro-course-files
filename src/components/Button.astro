@@ -3,10 +3,11 @@ const btnVarieties = {
   default: "btn--default",
   icon: "btn--icon",
 };
+
 const {
   classes,
   variety = "default",
-  isBordered = false,
+  isBordered,
   background = "hsl(130, 50%, 50%)",
   color = "hsl(130, 50%, 2%)",
   ...rest
@@ -32,7 +33,7 @@ const {
     gap: 0.25rem;
     align-items: center;
     cursor: pointer;
-    padding: 4px 16px;
+    border: none;
     background: var(--background);
     color: var(--color);
   }

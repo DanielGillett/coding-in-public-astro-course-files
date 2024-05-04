@@ -10,6 +10,7 @@ export default defineConfig({
     include: {
       // Include only the ph icons in the bundle
       ph: ['apple-logo-fill'],
+      "radix-icons": ['check', 'cross-2']
     }
   }), react()],
   css: {

@@ -2,54 +2,26 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
 import { Icon } from "astro-icon/components";
+import Heading from "../components/Heading.astro";
 
 const res = await fetch("https://jsonplaceholder.typicode.com/todo/1");
 const data = await res.json();
+
+// const fakeHtml = `<h1>Heading</h1><p>something <strong>here</strong></p>`;
+
+const headings = [
+  { tagName: "h1", size: "h2", text: "Heading 1" },
+  { tagName: "h2", size: "h5", text: "Heading 2" },
+  { tagName: "h3", size: "h6", text: "Heading 3" },
+];
 ---
 
 <BaseLayout title="myTitle">
-  <div>
-    <h1>Home</h1>
-    <Button
-      id="my-btn"
-      aria-label="Add to cart"
-      variety="default"
-      isBordered
-      background="#2222"
-    >
-      <span>Btn text</span>
-      <Icon
-        name="ph:apple-logo-fill"
-        size={35}
-        style="color: blue;"
-        title="My Apple Icon"
-      />
-    </Button>
-    <Button
-      id="my-btn-two"
-      aria-label="Add to cart"
-      variety="icon"
-      isBordered
-      background="#2222"
-    >
-      <Icon
-        name="ph:apple-logo-fill"
-        size={35}
-        style="color: blue;"
-        title="My Apple Icon"
-      />
-    </Button>
-  </div>
+  {
+    headings.map((heading) => (
+      <Heading tagName={heading.tagName} size={heading.size}>
+        {heading.text}
+      </Heading>
+    ))
+  }
 </BaseLayout>
-
-<!-- 
-interface Props extends HTMLAttributes<"svg"> {
-  /** The name of the icon to include */
-  name: string;
-  /** Shorthand for including a <title>{props.title}</title> element in the SVG */
-  title?: string;
-  /** Shorthand for setting width and height */
-  size?: number;
-  width?: number;
-  height?: number;
-} -->

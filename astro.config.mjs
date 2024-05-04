@@ -12,5 +12,14 @@ export default defineConfig({
       // Include all `uis` icons
       uis: ['*']
     }
-  })]
+  })],
+
+  css: {
+    // You might need to adjust the path depending on your project structure
+    global: `
+      @import 'tailwindcss/base';
+      @import 'tailwindcss/components';
+      @import 'tailwindcss/utilities';
+    `
+  }
 });

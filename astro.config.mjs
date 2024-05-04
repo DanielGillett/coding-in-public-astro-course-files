@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,8 +13,7 @@ export default defineConfig({
       // Include all `uis` icons
       uis: ['*']
     }
-  })],
-
+  }), react()],
   css: {
     // You might need to adjust the path depending on your project structure
     global: `

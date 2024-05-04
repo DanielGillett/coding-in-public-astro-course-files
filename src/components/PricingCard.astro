@@ -1,6 +1,10 @@
 ---
+// library imports
 import { Icon } from "astro-icon/components";
 import { CheckIcon, Cross2Icon } from "@radix-ui/react-icons";
+
+// component imports
+import Button from "./Button.astro";
 
 const {
   tier,
@@ -33,7 +37,9 @@ const {
   <p class="desc">{description}</p>
 
   <!-- button -->
-  <!-- <Button></button> -->
+  <Button id={tier.toLowerCase()}>
+    {btn_text}
+  </Button>
 
   <!-- features -->
   <ul>

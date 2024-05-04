@@ -10,8 +10,6 @@ export default defineConfig({
     include: {
       // Include only the ph icons in the bundle
       ph: ['apple-logo-fill'],
-      // Include all `uis` icons
-      // uis: ['*']
     }
   }), react()],
   css: {

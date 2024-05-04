@@ -1,5 +1,9 @@
 ---
-import data from "module";
+// components
+import PricingCard from "../components/PricingCard.astro";
+
+// data
+import pricingCardData from "../components/Data/cardDate.json";
 ---
 
 <html lang="en">
@@ -10,7 +14,7 @@ import data from "module";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-blue-400">
-    <!-- Place pricing section here -->
+  <body>
+    {pricingCardData.map((card) => <PricingCard {...card} />)}
   </body>
 </html>

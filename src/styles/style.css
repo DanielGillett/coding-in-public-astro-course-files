@@ -20,8 +20,3 @@ footer {
 main {
   padding: var(--size-4);
 }
-
-h1 {
-  font-size: 4rem;
-  margin-bottom: 30px;
-}

@@ -1,15 +1,7 @@
 ---
-import Module3Layout from "../layouts/Module3Layout.astro";
-
-import { Content as PromoBanner } from "../components/PromoBanner.md";
-
-import "../styles/style.css";
-
-const renderedHTML = `<h1>hi</h1>`;
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Module3Layout title="Home">
+<BaseLayout title="Home">
   <h1>Homepage</h1>
-  <PromoBanner />
-  <Fragment set:html={renderedHTML} />
-</Module3Layout>
+</BaseLayout>

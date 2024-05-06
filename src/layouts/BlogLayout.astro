@@ -1,9 +1,10 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import Module3Layout from "./Module3Layout.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title}>
+<Module3Layout title={frontmatter.title}>
+  <a href="/blog">Back to Blog</a>
   <slot />
-</BaseLayout>
+</Module3Layout>

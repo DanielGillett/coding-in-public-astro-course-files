@@ -1,62 +1,15 @@
 ---
-// components
-import PricingCard from "../components/PricingCard.astro";
+import Module3Layout from "../layouts/Module3Layout.astro";
+
 import { Content as PromoBanner } from "../components/PromoBanner.md";
 
-// data
-import pricingCardData from "../components/Data/cardDate.json";
-
-// types
-export type Card = {
-  tier: string;
-  most_popular: boolean;
-  amount_per_month: number;
-  title: string;
-  description: string;
-  btn_text: string;
-  features: {
-    title: string;
-    checked: boolean;
-  }[];
-};
-
-// styles
-import "../styles/main.css";
 import "../styles/style.css";
 
-const renderedHTML = `<h1>hello</h1>`;
+const renderedHTML = `<h1>hi</h1>`;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <main>
-      <PromoBanner />
-      <Fragment set:html={renderedHTML} />
-      <div class="card-wrapper">
-        {pricingCardData.map((card: Card) => <PricingCard data={card} />)}
-      </div>
-    </main>
-    <style>
-      main {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        padding: var(--space--xl);
-      }
-      .card-wrapper {
-        display: flex;
-        gap: var(--space--xl);
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    </style>
-  </body>
-</html>
+<Module3Layout title="Home">
+  <h1>Homepage</h1>
+  <PromoBanner />
+  <Fragment set:html={renderedHTML} />
+</Module3Layout>

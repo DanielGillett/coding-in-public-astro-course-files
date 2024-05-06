@@ -1,11 +1,11 @@
 ---
-title: Hello, Post 1
+title: Hello, Post 2
 layout: "../../layouts/BlogLayout.astro"
 ---
 
 # Hi there!
 
-This Markdown file creates a page at `your-domain.com/page-1/`
+This Markdown file creates a page at `your-domain.com/page-2/`
 
 It probably isn't styled much, but Markdown does support:
 
@@ -20,6 +20,6 @@ import Module3Layout from "../layouts/Module3Layout.astro";
 ---
 
 <Module3Layout title="Home">
-  <h1>Homepage</h1>
+  <h1>Post 2</h1>
 </Module3Layout>
 ```

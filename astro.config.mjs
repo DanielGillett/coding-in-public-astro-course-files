@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
-
 import react from "@astrojs/react";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
       ph: ['apple-logo-fill'],
       "radix-icons": ['check', 'cross-2']
     }
-  }), react()],
+  }), react(), mdx()],
   css: {
     // You might need to adjust the path depending on your project structure
     global: `

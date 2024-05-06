@@ -2,16 +2,16 @@
 import Module3Layout from "../../layouts/Module3Layout.astro";
 
 // import a single file
-import * as myPost from "./post-1.md";
+import * as myPost from "./post-1.mdx";
 
 // import multiple files with Astro.glob
-const posts = await Astro.glob("./*.md");
+const posts = await Astro.glob("./*.{md,mdx}");
 ---
 
 <Module3Layout title="Blog">
   <h1>Blog Page</h1>
   <ul>
-    <li><a href={myPost.url}></a>{myPost.frontmatter.title}</li>
+    <!-- <li><a href={myPost.url}></a>{myPost.frontmatter.title}</li> -->
     {
       posts.map((post) => (
         <li>

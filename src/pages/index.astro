@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const team = await getCollection("team");
@@ -12,6 +12,10 @@ const posts = await getCollection("posts");
     {team.map((t) => <p>{t.data.name}</p>)}
   </ul>
   <ul>
-    {posts.map((p) => <p>{p.data.title}</p>)}
+    {
+      posts.map(async (p) => {
+        return <li>{p.data.author.id}</li>;
+      })
+    }
   </ul>
 </BaseLayout>

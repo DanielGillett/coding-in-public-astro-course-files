@@ -3,11 +3,15 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const team = await getCollection("team");
+const posts = await getCollection("posts");
 ---
 
 <BaseLayout title="Home">
   <h1>Homepage</h1>
   <ul>
     {team.map((t) => <p>{t.data.name}</p>)}
+  </ul>
+  <ul>
+    {posts.map((p) => <p>{p.data.title}</p>)}
   </ul>
 </BaseLayout>

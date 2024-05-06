@@ -1,6 +1,7 @@
 ---
 // components
 import PricingCard from "../components/PricingCard.astro";
+import { Content as PromoBanner } from "../components/PromoBanner.md";
 
 // data
 import pricingCardData from "../components/Data/cardDate.json";
@@ -21,6 +22,9 @@ export type Card = {
 
 // styles
 import "../styles/main.css";
+import "../styles/style.css";
+
+const renderedHTML = `<h1>hello</h1>`;
 ---
 
 <html lang="en">
@@ -33,6 +37,8 @@ import "../styles/main.css";
   </head>
   <body>
     <main>
+      <PromoBanner />
+      <Fragment set:html={renderedHTML} />
       <div class="card-wrapper">
         {pricingCardData.map((card: Card) => <PricingCard data={card} />)}
       </div>

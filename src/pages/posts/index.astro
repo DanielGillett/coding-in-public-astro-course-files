@@ -1,8 +1,10 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import AuthorCard from "../components/AuthCard.astro";
+import AuthorCard from "../../components/AuthCard.astro";
+
+const { slug } = Astro.params;
 
 const post = await getEntry("posts", "post-1");
 

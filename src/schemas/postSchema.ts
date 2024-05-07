@@ -11,8 +11,9 @@ const postSchema = ({ image }) =>
     canonicalURL: z.string().url().optional(),
     author: reference("team"),
     cover: image().refine((img) => img.width >= 1000, {
-      message: "Cover image must be at least 1080 pixels wide!",
+      message: "Cover image must be at least 1000 pixels wide!",
     }),
     coverAlt: z.string(),
   });
+
 export default postSchema;

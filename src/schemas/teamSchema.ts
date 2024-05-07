@@ -5,4 +5,5 @@ const teamSchema = z.object({
   role: reference("role"),
   location: z.string().optional(),
 });
+
 export default teamSchema;

@@ -20,3 +20,7 @@ footer {
 main {
   padding: var(--size-4);
 }
+
+.no-style {
+  background: local;
+}

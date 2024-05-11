@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -8,29 +8,23 @@ export const getStaticPaths = (async ({ paginate }) => {
     "posts",
     ({ data }) => data.isDraft === false
   );
+
   return paginate(posts, { pageSize: 2 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
-const title = `Blog Page ${page.currentPage}`;
 ---
 
-<BaseLayout title={title}>
-  <h1>{title}</h1>
-
+<BaseLayout title="Home">
   <ul>
     {
       page.data.map((p) => (
         <li>
-          <a href={`/posts/${p.slug}/`}>Read {p.data.title}</a>
+          <a href={`/blog/${p.slug}/`}>Read Post</a>
         </li>
       ))
     }
   </ul>
-  <div
-    style="display: flex; justify-content: center; gap: 2rem; padding: 2rem; margin-top: 2rem; border: 2px solid var(--surface-2);"
-  >
-    {page.url.prev && <a href={page.url.prev}>Previous</a>}
-    {page.url.next && <a href={page.url.next}>Next </a>}
-  </div>
+  {page.url.prev && <a href={page.url.prev}>Prev</a>}
+  {page.url.next && <a href={page.url.next}>Next</a>}
 </BaseLayout>

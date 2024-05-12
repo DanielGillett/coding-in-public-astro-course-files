@@ -1,35 +1,11 @@
 ---
-// export const prerender = true;
+// imports
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import { getCollection, getEntry } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-const team = await getCollection("team");
-const posts = await getCollection(
-  "posts",
-  ({ data }) => data.isDraft === false
-);
+// components
+import Hero from "@/components/home/hero.astro";
 ---
 
-<BaseLayout title="Home">
-  <h1>Homepage</h1>
-  <ul>
-    {
-      team.map((t) => (
-        <li>
-          <p>{t.data.name}</p>
-          <p>{t.data.role.id}</p>
-        </li>
-      ))
-    }
-  </ul>
-  <ul>
-    {
-      posts.map((p) => (
-        <li>
-          <a href={`/posts/${p.slug}`}>Read Post </a>
-        </li>
-      ))
-    }
-  </ul>
+<BaseLayout title="homepage" description="else">
+  <Hero />
 </BaseLayout>

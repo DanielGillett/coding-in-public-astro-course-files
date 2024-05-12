@@ -1,37 +1,20 @@
 ---
-const { title } = Astro.props;
+// components
+import BaseHead from "./BaseHead.astro";
+import Nav from "@/components/Nav.astro";
+import Footer from "@/components/Footer.astro";
 
-import "../styles/style.css";
-
-const navItems = [
-  {
-    href: "/",
-    text: "Home",
-  },
-  {
-    href: "/blog",
-    text: "Blog",
-  },
-];
+// styles
+import "@/styles/global.css";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
+  <BaseHead {...Astro.props} />
   <body>
-    <nav>{navItems.map((i) => <a href={i.href}>{i.text}</a>)}</nav>
     <main>
+      <Nav />
       <slot />
     </main>
-    <footer>
-      <p>
-        Built with <a href="https://astro.build">Astro</a>
-      </p>
-    </footer>
+    <Footer />
   </body>
 </html>

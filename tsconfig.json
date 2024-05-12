@@ -3,11 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@/*": ["src/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"]
-    },
-    "strictNullChecks": true
+      "@components/*": ["src/components/*"]
+    }
+    // "strictNullChecks": true
     // "allowJs": true
   }
 }

@@ -11,7 +11,10 @@ const features = defineCollection({
 
 const tools = defineCollection({
   type: "data",
-  schema: z.object({}),
+  schema: z.object({
+    title: z.string(),
+    icon: z.string().refine((val) => val.startsWith("icon")),
+  }),
 });
 
 const projects = defineCollection({
@@ -25,7 +28,7 @@ const projects = defineCollection({
     }),
 });
 
-export const collection = {
+export const collections = {
   features,
   tools,
   projects,

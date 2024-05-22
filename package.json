@@ -3,16 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --verbose",
+    "dev": "astro dev",
+    "dev:verbose": "astro dev --verbose",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "server": "npx json-server db.json"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
     "astro": "^4.4.0",
     "astro-icon": "^1.1.0",
+    "json-server": "^1.0.0-beta.0",
     "typescript": "^5.3.3"
   }
 }

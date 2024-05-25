@@ -1,16 +1,33 @@
 ---
-// imports
+export const prerender = false;
+
+// astro tools
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+// layout
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 // components
 import Hero from "@/components/projects/hero.astro";
 import ContactForm from "@/components/ContactForm.astro";
 import ProjectTile from "@/components/ui/ProjectTile.astro";
-import { getCollection } from "astro:content";
-import { Icon } from "astro-icon/components";
+import getSearchParamsAsArray from "@/lib/getSearchParamAsArray";
 
-const projects = await getCollection("projects");
+// collections
 const allTools = await getCollection("tools");
+let projects = await getCollection("projects");
+
+const filterItems = getSearchParamsAsArray(Astro.url, "tools");
+
+if (filterItems.length > 0) {
+  projects = projects.filter((project) => {
+    const projectTools = project.data.icons.map((t) => t.id);
+    //console.log("projectTools: ", projectTools);
+
+    return filterItems.some((i) => projectTools.includes(i));
+  });
+}
 ---
 
 <BaseLayout
@@ -24,16 +41,20 @@ const allTools = await getCollection("tools");
       <div class="filter-wrapper">
         <div class="columns">
           <p>Filter by tools</p>
-          <!-- check if there are fileters -->
-          <button class="btn badge relative" aria-pressed="true">
-            <Icon
-              name="icon--close"
-              aria-hidden="true"
-              size={18}
-              class="close"
-            />
-            <span>Clear All</span>
-          </button>
+
+          {
+            filterItems.length > 0 && (
+              <button class="btn badge relative" aria-pressed="true">
+                <Icon
+                  name="icon--close"
+                  aria-hidden="true"
+                  size={18}
+                  class="close"
+                />
+                <span>Clear All</span>
+              </button>
+            )
+          }
         </div>
         <ul>
           {
@@ -42,15 +63,17 @@ const allTools = await getCollection("tools");
                 <button
                   class="btn badge relative"
                   data-tool="t.id"
-                  aria-pressed="true"
+                  aria-pressed={filterItems.includes(t.id)}
                 >
                   <span>{t.data.title}</span>
-                  <Icon
-                    name="icon--close"
-                    aria-hidden="true"
-                    size={18}
-                    class="close"
-                  />
+                  {filterItems.includes(t.id) && (
+                    <Icon
+                      name="icon--close"
+                      aria-hidden="true"
+                      size={18}
+                      class="close"
+                    />
+                  )}
                 </button>
               </li>
             ))

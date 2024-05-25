@@ -7,8 +7,10 @@ import Hero from "@/components/projects/hero.astro";
 import ContactForm from "@/components/ContactForm.astro";
 import ProjectTile from "@/components/ui/ProjectTile.astro";
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 const projects = await getCollection("projects");
+const allTools = await getCollection("tools");
 ---
 
 <BaseLayout
@@ -17,8 +19,48 @@ const projects = await getCollection("projects");
 >
   <Hero />
   <!-- filter -->
-  <div class="grid-wrapper">
-    {projects.map(({ data }) => <ProjectTile data={data} />)}
+  <div class="container">
+    <div>
+      <div class="filter-wrapper">
+        <div class="columns">
+          <p>Filter by tools</p>
+          <!-- check if there are fileters -->
+          <button class="btn badge relative" aria-pressed="true">
+            <Icon
+              name="icon--close"
+              aria-hidden="true"
+              size={18}
+              class="close"
+            />
+            <span>Clear All</span>
+          </button>
+        </div>
+        <ul>
+          {
+            allTools.map((t) => (
+              <li>
+                <button
+                  class="btn badge relative"
+                  data-tool="t.id"
+                  aria-pressed="true"
+                >
+                  <span>{t.data.title}</span>
+                  <Icon
+                    name="icon--close"
+                    aria-hidden="true"
+                    size={18}
+                    class="close"
+                  />
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="grid-wrapper">
+        {projects.map(({ data }) => <ProjectTile data={data} />)}
+      </div>
+    </div>
   </div>
   <ContactForm />
 </BaseLayout>

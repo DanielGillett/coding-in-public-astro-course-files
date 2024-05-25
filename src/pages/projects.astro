@@ -1,0 +1,24 @@
+---
+// imports
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// components
+import Hero from "@/components/projects/hero.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import ProjectTile from "@/components/ui/ProjectTile.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<BaseLayout
+  title="Katie Haus Projects"
+  description="Here are some recent projects I've done for clients."
+>
+  <Hero />
+  <!-- filter -->
+  <div class="grid-wrapper">
+    {projects.map(({ data }) => <ProjectTile data={data} />)}
+  </div>
+  <ContactForm />
+</BaseLayout>

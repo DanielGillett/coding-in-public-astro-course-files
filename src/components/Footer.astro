@@ -6,9 +6,9 @@ import { Icon } from "astro-icon/components";
 <footer>
   <div>
     <p>
-      &copy; <span id="copyright">{new Date().getFullYear().toString()}</span> Katie
-      Haus. All rights reserved. I’m a skilled web developer passionate about creating
-      innovative and user-friendly websites.
+      &copy; <span id="copyright">{new Date().getFullYear()}</span> Katie Haus. All
+      rights reserved. I’m a skilled web developer passionate about creating innovative
+      and user-friendly websites.
     </p>
     <ul>
       {
@@ -25,6 +25,6 @@ import { Icon } from "astro-icon/components";
 </footer>
 
 <script>
-  const copyrightSpan: HTMLSpanElement = document.querySelector("#copyright");
+  const copyrightSpan = document.querySelector("#copyright") as HTMLSpanElement;
   copyrightSpan.textContent = new Date().getFullYear().toString();
 </script>

@@ -1,5 +1,4 @@
 import type { CollectionEntry } from "astro:content";
-import { URLSearchParams } from "url";
 
 export default function getSearchParamAsArray(url: URL, key: string) {
   const params = new URLSearchParams(url.search);

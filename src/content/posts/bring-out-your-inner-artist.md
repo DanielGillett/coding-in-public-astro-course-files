@@ -3,6 +3,7 @@ title: Bring Out Your Inner Artist
 description: Learn how to bring out your inner artist in web development—even if you don’t think about yourself as an artist.
 pubDate: 2024-01-05
 image: ./images/bring-out-your-inner-artist.jpg
+isDraft: false
 ---
 
 ## Introduction

@@ -1,17 +1,23 @@
 ---
-// imports
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image, getImage } from "astro:assets";
+import katie from "../assets/image.jpg";
 
-// components
-import Hero from "@/components/home/hero.astro";
-import FeaturesBanner from "@/components/home/FeaturesBanner.astro";
-import ProjectSection from "@/components/home/ProjectSection.astro";
-import ContactForm from "@/components/ContactForm.astro";
+const optimizedBackground = await getImage({ src: katie, format: "webp" });
+console.log("🚀 ~ optimizedBackground:", optimizedBackground);
 ---
 
-<BaseLayout title="homepage" description="else">
-  <Hero />
-  <FeaturesBanner />
-  <ProjectSection />
-  <ContactForm />
-</BaseLayout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body style={`background-image: url(${optimizedBackground.src});`}>
+    <h1>Astro</h1>
+    <img src="/image.jpg" alt="Katie Haus" />
+    <p>Assests Image</p>
+    <Image src={katie} width={40} format="webp" alt="Katie Haus" />
+  </body>
+</html>

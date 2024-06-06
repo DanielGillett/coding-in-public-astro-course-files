@@ -1,7 +1,11 @@
 ---
-import { Image, getImage } from "astro:assets";
-import katie from "../assets/image.jpg";
+import { Image } from "astro:assets";
+
+import Katie from "../assets/image.jpg";
+import { getEntry } from "astro:content";
 import ReactWrapper from "../components/ReactWrapper";
+
+const post = await getEntry("posts", 1);
 ---
 
 <html lang="en">
@@ -14,15 +18,25 @@ import ReactWrapper from "../components/ReactWrapper";
   </head>
   <body>
     <ReactWrapper>
-      <Image
-        src={katie}
-        width={400}
-        format="webp"
-        alt="Katie Haus"
-        height={400}
-        quality={"max"}
-        aria-hidden="true"
-      />
+      <Image src={Katie} alt="Katie Haus" width={200} height={200} />
     </ReactWrapper>
+
+    <p>content collections</p>
+    <Image src={post.data.cover} alt="Katie Haus" width={150} height={150} />
+
+    <p>Public</p>
+    <Image src="/image.jpg" alt="Katie Haus" width={150} height={150} />
+
+    <p>Local</p>
+    <Image src={Katie} alt="Katie Haus" width={150} height={150} />
+
+    <p>Remote</p>
+    <Image
+      src="https://www.gstatic.com/webp/gallery/1.jpg"
+      alt=""
+      inferSize
+      width={400}
+      height={160}
+    />
   </body>
 </html>

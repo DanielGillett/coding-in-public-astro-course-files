@@ -1,18 +1,13 @@
 import { defineCollection, z } from "astro:content";
 
-const imagePosts = defineCollection({
+const posts = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
-      title: z.string(),
-      date: z.date(),
-      image: z.object({
-        src: image().refine((img) => img.width > 200, {
-          message: "Your image must be a least 200px wide",
-        }),
-        alt: z.string(),
+      cover: image().refine((img) => img.width >= 700, {
+        message: "Your image must be at least 700px",
       }),
     }),
 });
 
-export const collections = { imagePosts };
+export const collections = { posts };

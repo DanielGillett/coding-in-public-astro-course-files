@@ -1,14 +1,13 @@
-import type { ReactNode } from "react";
-
-import Katie from "../assets/image.jpg";
+import { type ReactNode } from "react";
 
 const ReactWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <p>inside wrapper</p>
-      <img src={Katie.src} alt="" />
+      <p>Begin React Image</p>
       {children}
+      <p>End React Image</p>
     </div>
   );
 };
+
 export default ReactWrapper;

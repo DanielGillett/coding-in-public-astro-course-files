@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 const ReactWrapper = ({ children }: { children: ReactNode }) => {
   return (
@@ -9,5 +9,4 @@ const ReactWrapper = ({ children }: { children: ReactNode }) => {
     </div>
   );
 };
-
 export default ReactWrapper;

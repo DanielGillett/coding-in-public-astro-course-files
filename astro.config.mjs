@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["astro.build", "www.gstatic.com"]
+    domains: ["astro.build"]
   },
   integrations: [react()]
 });

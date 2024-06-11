@@ -5,4 +5,4 @@ local
 ![Katie Haus](../assets/image.jpg)
 
 remote
-![random graphic](https://www.gstatic.com/webp/gallery/1.jpg)
+![random graphic](https://astro.build/_astro/content-focused.VdVRy80q.webp)

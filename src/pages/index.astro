@@ -1,13 +1,13 @@
 ---
+import { getImage } from "astro:assets";
+
 import Katie from "../assets/image.jpg";
-import { getImage } from "astro/assets";
 
 const optimizedBackground = await getImage({
   src: Katie,
   format: "webp",
   width: 240,
 });
-console.log("🚀 ~ optimizedBackground:", optimizedBackground);
 ---
 
 <html lang="en">
@@ -18,7 +18,5 @@ console.log("🚀 ~ optimizedBackground:", optimizedBackground);
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body style={`background-image: url(${optimizedBackground.src});`}>
-    <p>Local</p>
-  </body>
+  <body style={`background-image: url(${optimizedBackground.src});`}> </body>
 </html>

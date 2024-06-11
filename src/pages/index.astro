@@ -1,12 +1,11 @@
 ---
-import { getImage } from "astro:assets";
+import { Image, Picture, getImage } from "astro:assets";
 
 import Katie from "../assets/image.jpg";
 
-const optimizedBackground = await getImage({
+const optImage = await getImage({
   src: Katie,
-  format: "webp",
-  width: 240,
+  format: "avif",
 });
 ---
 
@@ -18,5 +17,28 @@ const optimizedBackground = await getImage({
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body style={`background-image: url(${optimizedBackground.src});`}> </body>
+  <body style={`background-image: url(${optImage.src})`}>
+    <!-- <Image src={Katie} alt="Katie Haus" densities={[1.5, 2]} width={400} /> -->
+    <!-- <Image
+      src={Katie}
+      alt="Katie Haus"
+      widths={[240, 540, 720, 850, Katie.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px,(max-width: 1800px) 850px, ${Katie.width}px`}
+    /> -->
+    <!-- <Picture
+      src={Katie}
+      alt="Katie Haus"
+      widths={[240, 540, 720, 850, Katie.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px,(max-width: 1800px) 850px, ${Katie.width}px`}
+      fallbackFormat="jpg"
+    /> -->
+    <!-- <Picture
+      src={Katie}
+      alt="Katie Haus"
+      widths={[240, 540, 720, 850, Katie.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px,(max-width: 1800px) 850px, ${Katie.width}px`}
+      fallbackFormat="jpg"
+      formats={["avif", "webp", "jpg"]} -->
+    />
+  </body>
 </html>

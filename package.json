@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "dynamic-endpoints-82",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,15 +7,21 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "server": "json-server db.json"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/node": "^8.3.0",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.5",
-    "astro": "^4.10.2",
-    "typescript": "^5.4.5"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.2",
+    "astro-icon": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "json-server": "^1.0.0-beta.1",
+    "sanitize-html": "^2.12.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/sanitize-html": "^2.11.0"
   }
 }

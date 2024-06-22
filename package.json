@@ -11,6 +11,8 @@
     "server": "json-server db.json"
   },
   "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/netlify": "^5.3.2",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.2",
     "astro-icon": "^1.1.0",
@@ -19,7 +21,7 @@
     "sanitize-html": "^2.12.1",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.5.2"
   },
   "devDependencies": {
     "@types/sanitize-html": "^2.11.0"

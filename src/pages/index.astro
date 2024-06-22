@@ -3,6 +3,7 @@ import LinkCard, { type LinkProps } from "@/components/LinkCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const req = await fetch(`${Astro.url.origin}/api/getLinks.json`);
+
 const links = await req.json();
 ---
 

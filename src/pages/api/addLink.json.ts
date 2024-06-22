@@ -5,13 +5,14 @@ export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
   try {
     const { title, description, url, isRead } = body;
+
     if (
       typeof title !== "string" ||
       typeof description !== "string" ||
       typeof url !== "string" ||
       typeof isRead !== "boolean"
     ) {
-      throw new Error("Please provide all required fields");
+      throw new Error("Please provide all required fields.");
     }
 
     const req = await fetch("http://localhost:3000/links", {
@@ -36,7 +37,9 @@ export const POST: APIRoute = async ({ request }) => {
         message: req,
         success: true,
       }),
-      { status: 201 }
+      {
+        status: 201,
+      }
     );
   } catch (e) {
     console.error(e);
@@ -46,16 +49,19 @@ export const POST: APIRoute = async ({ request }) => {
           message: e.message,
           success: false,
         }),
-        { status: 404 }
+        {
+          status: 404,
+        }
       );
     }
-
     return new Response(
       JSON.stringify({
         message: "There was an unknown error",
         success: false,
       }),
-      { status: 404 }
+      {
+        status: 404,
+      }
     );
   }
 };

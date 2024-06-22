@@ -10,7 +10,9 @@ export const GET: APIRoute = async () => {
 
     const res = await req.json();
 
-    return new Response(JSON.stringify(res), { status: 200 });
+    return new Response(JSON.stringify(res), {
+      status: 200,
+    });
   } catch (e) {
     console.log(e);
     return new Response(

@@ -9,5 +9,17 @@ export default async function seed() {
       isRead: true,
       upvoteNum: 3,
     },
+    {
+      title: "Coding in Public",
+      url: "codinginpublic.dev",
+      isRead: false,
+      upvoteNum: 10000,
+    },
+    {
+      title: "Blog",
+      url: "chrispennington.blog",
+      isRead: true,
+      upvoteNum: 1000,
+    },
   ]);
 }

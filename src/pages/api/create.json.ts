@@ -7,10 +7,12 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await createUserWithEmailAndPassword(projectAuth, email, password);
-    return new Response(JSON.stringify({ message: "Account created" }), {
+    return new Response(JSON.stringify({ message: "Account created!" }), {
       status: 201,
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error }), { status: 500 });
+    return new Response(JSON.stringify({ error }), {
+      status: 500,
+    });
   }
 };

@@ -14,7 +14,6 @@ export const formSubmit = (form: HTMLFormElement) => {
         const { error } = await response.json();
         throw new Error(error.code);
       }
-
       form.reset();
       window.location.reload();
     } catch (error) {
@@ -22,8 +21,7 @@ export const formSubmit = (form: HTMLFormElement) => {
         console.log(error);
         return alert(error.message);
       }
-
-      return alert("An unknown error occured");
+      return alert("An unknown error occurred");
     }
   });
 };

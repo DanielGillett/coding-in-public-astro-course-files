@@ -4,10 +4,12 @@ import { projectAuth } from "../../firebase/config";
 export const POST: APIRoute = async () => {
   try {
     await projectAuth.signOut();
-    return new Response(JSON.stringify({ message: "Logged out" }), {
+    return new Response(JSON.stringify({ message: "Logged out!" }), {
       status: 200,
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error }), { status: 500 });
+    return new Response(JSON.stringify({ error }), {
+      status: 500,
+    });
   }
 };

@@ -1,7 +1,6 @@
 ---
+import { projectAuth } from "../firebase/config";
 import Layout from "../layouts/Layout.astro";
-import { projectAuth } from "../../src/firebase/config";
-const userID = projectAuth.currentUser?.uid;
 ---
 
 <Layout title="Welcome to Astro.">

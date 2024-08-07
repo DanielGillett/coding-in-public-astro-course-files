@@ -7,5 +7,8 @@ import db from "@astrojs/db";
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  integrations: [db()]
+  integrations: [db()],
+  security: {
+    origin: true
+  }
 });

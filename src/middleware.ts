@@ -13,5 +13,5 @@ export const onRequest = defineMiddleware((context, next) => {
   // ) {
   //   return context.redirect("/login");
   // }
-  // return next();
+  return next();
 });

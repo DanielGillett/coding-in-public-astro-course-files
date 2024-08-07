@@ -21,7 +21,7 @@ export const POST: APIRoute = async (context) => {
       .from(User)
       .where(eq(User.username, username));
 
-    if (usersMatching.length > 1) {
+    if (usersMatching.length > 0) {
       throw new Error("User already exists");
     }
 

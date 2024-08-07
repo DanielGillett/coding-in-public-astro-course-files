@@ -1,10 +1,15 @@
 ---
-// import { projectAuth } from "../firebase/config";
 import Layout from "../layouts/Layout.astro";
-const { user } = Astro.locals;
 ---
 
-<Layout title="Welcome to Astro.">
-  <h1>{user && user.username}, you are successfully logged in!</h1>
-  <p>You are now seeing protected content!</p>
+<Layout title="Login to Your Account">
+  <h1>Login</h1>
+  <form action="/api/login.json" data-authForm>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+    <button>Login</button>
+  </form>
+  <p>Need an account? <a href="create">Create account</a></p>
 </Layout>

@@ -5,11 +5,12 @@ export const validateInputs = ({
   username: string;
   password: string;
 }) => {
+  console.log("username, password", { username, password });
   if (
     typeof username !== "string" ||
     username.length < 3 ||
     username.length > 31 ||
-    !/^[a-z0-9_-]+$/.test(username) ||
+    // !/^[a-z0-9_-]+$/.test(username) ||  // this is giving an error with 'something' for the password
     typeof password !== "string" ||
     password.length < 6 ||
     password.length > 255

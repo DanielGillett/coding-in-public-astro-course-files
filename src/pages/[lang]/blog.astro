@@ -7,7 +7,6 @@ import { getPostSlugWithoutLang } from "@/i18n/getPostSlugWithoutLang";
 
 export const getStaticPaths = (() => {
   const languageValues = Languages.map((lang) => lang.value);
-
   return languageValues.map((lang) => ({
     params: {
       lang,

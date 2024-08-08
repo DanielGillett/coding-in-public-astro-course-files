@@ -1,14 +1,17 @@
-import { defineConfig } from 'astro/config';
-import vercel from "@astrojs/vercel/serverless";
+import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 
-import db from "@astrojs/db";
+import sitemap from "@astrojs/sitemap";
+
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: vercel(),
-  integrations: [db()],
-  security: {
-    origin: true
-  }
+  prefetch: {
+    prefetchAll: true,
+  },
+  site: "https://stargazers.club",
+  integrations: [icon(), sitemap()],
+  output: "hybrid",
+  adapter: netlify(),
 });

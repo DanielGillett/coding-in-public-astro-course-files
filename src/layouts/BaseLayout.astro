@@ -6,13 +6,15 @@ import Footer from "@/components/Footer.astro";
 
 // styles
 import "@/styles/global.css";
+import { fade } from "astro:transitions";
 ---
 
 <html lang="en">
   <BaseHead {...Astro.props} />
   <body>
     <Nav />
-    <main>
+    <!-- <main transition:animate="slide"> -->
+    <main transition:animate={fade({ duration: "0.5s" })}>
       <slot />
     </main>
     <Footer />
